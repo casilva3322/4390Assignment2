@@ -1,0 +1,44 @@
+@model CodingClub.Models.Client
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h2>Update</h2>
+
+<h4>Client</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClientFName" class="control-label"></label>
+                <input asp-for="ClientFName" class="form-control" />
+                <span asp-validation-for="ClientFName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientLName" class="control-label"></label>
+                <input asp-for="ClientLName" class="form-control" />
+                <span asp-validation-for="ClientLName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientEmail" class="control-label"></label>
+                <input asp-for="ClientEmail" class="form-control" />
+                <span asp-validation-for="ClientEmail" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Go Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

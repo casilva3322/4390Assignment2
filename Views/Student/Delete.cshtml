@@ -1,0 +1,40 @@
+@model CodingClub.Models.Student
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentFName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentFName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentLName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentLName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentEmail)
+        </dd>
+        
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="StudentId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Go Back</a>
+    </form>
+</div>
